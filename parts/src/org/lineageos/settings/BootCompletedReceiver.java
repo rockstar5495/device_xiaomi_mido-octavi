@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.provider.Settings;
 
+import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.doze.DozeUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -34,8 +35,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         if (DozeUtils.isDozeEnabled(context) && DozeUtils.sensorsEnabled(context)) {
             if (DEBUG) Log.d(TAG, "Starting Doze service");
+            DiracUtils.initialize();
             DozeUtils.startService(context);
         }
-
     }
 }
