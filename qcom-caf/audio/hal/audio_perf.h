@@ -28,6 +28,7 @@ int audio_low_latency_hint_start();
 int audio_low_latency_hint_end();
 
 #ifdef __cplusplus
+
 }
 #endif
 
